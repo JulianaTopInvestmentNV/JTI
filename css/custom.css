@@ -17,3 +17,14 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Keep all site text black, except content displayed on dark backgrounds. */
+body,
+body * {
+    color: #000 !important;
+}
+
+.dark-surface,
+.dark-surface * {
+    color: #fff !important;
+}

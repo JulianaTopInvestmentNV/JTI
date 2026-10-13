@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function activateTab(targetId) {
+    if (!targetId || typeof targetId !== 'string') return;
+    const escapedTargetId = window.CSS && window.CSS.escape ? CSS.escape(targetId) : targetId.replace(/["\\]/g, '\\$&');
+
     // Remove active state from all buttons
     tabBtns.forEach(b => {
       b.classList.remove('border-[#8c7343]', 'text-stone-900', 'font-bold');
@@ -45,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Keep the desktop and mobile versions of the selected tab in sync
-    document.querySelectorAll(`.tab-btn[data-target="${targetId}"]`).forEach(matchingBtn => {
+    document.querySelectorAll(`.tab-btn[data-target="${escapedTargetId}"]`).forEach(matchingBtn => {
       matchingBtn.classList.remove('border-transparent', 'text-stone-500', 'text-stone-600', 'hover:text-stone-800', 'hover:border-stone-300', 'font-medium', 'font-semibold');
       matchingBtn.classList.add('border-[#8c7343]', 'text-stone-900', 'font-bold');
     });

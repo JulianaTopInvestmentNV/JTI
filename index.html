@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
   <title>Juliana Top Investment N.V. Obligatielening 2026–2032 | Officiële Investeringsportal</title>
   <!-- Fonts -->
@@ -15,11 +16,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script src="js/tailwind-config.js"></script>
-  <!-- Local Stylesheets -->
-  <link href="css/style.css" rel="stylesheet">
+  <!-- Compiled production stylesheets -->
+  <link href="css/tailwind.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 </head>
 
@@ -29,12 +27,12 @@
   <!-- ================= TOP APP BAR / SHARED COMPONENT ================= -->
   <header
     class="sticky top-0 z-[60] bg-[#f8f6f2]/90 backdrop-blur-md border-b border-[#e6e1d8] shadow-sm transition-all duration-300">
-    <div class="flex items-center justify-between w-full px-6 lg:px-16 max-w-[1360px] mx-auto h-[72px] gap-6">
+    <div class="flex items-center justify-between w-full px-4 sm:px-6 lg:px-16 max-w-[1360px] mx-auto h-[72px] gap-2 sm:gap-6">
 
       <!-- Left: Logo -->
       <a class="flex items-center gap-3 group flex-shrink-0" href="#">
         <div
-          class="w-9 h-9 bg-gradient-to-br from-[#1a1c1e] to-[#2d3135] text-[#d9cfb5] flex items-center justify-center rounded shadow-md group-hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-0.5">
+          class="dark-surface w-9 h-9 bg-gradient-to-br from-[#1a1c1e] to-[#2d3135] text-[#d9cfb5] flex items-center justify-center rounded shadow-md group-hover:shadow-lg transition-all duration-300 transform group-hover:-translate-y-0.5">
           <span class="font-['IBM_Plex_Serif',serif] font-bold text-base tracking-tighter">JTI</span>
         </div>
         <div class="flex flex-col hidden sm:flex">
@@ -49,7 +47,7 @@
       </a>
 
       <!-- Center: Tab Navigation -->
-      <nav class="hidden lg:flex items-center gap-1 overflow-x-auto flex-1 justify-center" aria-label="Hoofdnavigatie">
+      <nav class="hidden 2xl:flex items-center gap-1 overflow-x-auto flex-1 justify-center" aria-label="Hoofdnavigatie">
         <button
           class="tab-btn active border-b-2 border-[#8c7343] text-stone-900 whitespace-nowrap py-2 px-3 text-sm font-bold transition-colors rounded-sm"
           data-target="obligatiestructuur">
@@ -72,21 +70,28 @@
         </button>
       </nav>
 
-      <!-- Right: CTA -->
-      <a class="tab-link flex-shrink-0 inline-flex items-center gap-2 bg-[#1a1c1e] hover:bg-[#2d3135] text-[#f8f6f2] text-sm font-semibold px-5 py-2.5 rounded transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
-        href="#inschrijven" data-target="inschrijven">
-        <span class="hidden sm:inline">Contact Advisor</span>
-        <span class="material-symbols-outlined text-[16px]">headset_mic</span>
-      </a>
+      <!-- Right: CTA buttons -->
+      <div class="ml-auto flex flex-shrink-0 items-center gap-2">
+        <a class="dark-surface tab-link inline-flex min-h-11 items-center gap-2 rounded bg-[#1a1c1e] px-3 py-3 text-sm font-semibold text-[#f8f6f2] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2d3135] hover:shadow-xl sm:px-5"
+          href="#inschrijven" data-target="inschrijven" aria-label="Inschrijven op obligatie">
+          <span class="hidden min-[375px]:inline">Inschrijven</span>
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit_document</span>
+        </a>
+        <a class="dark-surface tab-link inline-flex min-h-11 items-center gap-2 rounded bg-[#1a1c1e] px-3 py-3 text-sm font-semibold text-[#f8f6f2] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2d3135] hover:shadow-xl sm:px-5"
+          href="#inschrijven" data-target="inschrijven" aria-label="Contact opnemen met een adviseur">
+          <span class="hidden sm:inline">Contact Advisor</span>
+          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">headset_mic</span>
+        </a>
+      </div>
 
       <button id="mobile-menu-toggle" type="button"
-        class="lg:hidden inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded border border-stone-300 text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8c7343]"
+        class="2xl:hidden inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded border border-stone-300 text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8c7343]"
         aria-label="Open navigatiemenu" aria-controls="mobile-nav" aria-expanded="false">
         <span id="mobile-menu-icon" class="material-symbols-outlined" aria-hidden="true">menu</span>
       </button>
 
     </div>
-    <nav id="mobile-nav" class="hidden lg:hidden absolute top-full inset-x-0 border-b border-[#e6e1d8] bg-[#f8f6f2] p-3 shadow-lg"
+    <nav id="mobile-nav" class="hidden 2xl:hidden absolute top-full inset-x-0 border-b border-[#e6e1d8] bg-[#f8f6f2] p-3 shadow-lg"
       aria-label="Mobiele navigatie">
       <button class="tab-btn active w-full rounded px-4 py-3 text-left text-sm font-bold text-stone-900 hover:bg-stone-100"
         data-target="obligatiestructuur">Tranche-Indeling</button>
@@ -101,7 +106,7 @@
   <!-- ================= SOVEREIGN HERO SECTION ================= -->
   <section class="bg-[#fbfbfa] border-b border-stone-200 py-16 lg:py-24 relative overflow-hidden"
     style="background-color: rgb(245, 242, 235); border-bottom: 1px solid rgb(230, 225, 216);">
-    <div class="absolute inset-0 pointer-events-none flex items-center justify-end overflow-hidden"><img
+    <div class="absolute inset-0 pointer-events-none hidden items-center justify-end overflow-hidden md:flex"><img
         alt="Juliana Top Investment Watermark"
         class="w-[550px] lg:w-[720px] max-w-none mix-blend-multiply translate-x-12 lg:translate-x-20 object-contain select-none opacity-40"
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-xegDuBZT9mkVQWvKDVOn6i7m23nWIgeWOJ_SP62pR5yJWPBSSRfdPBuMnup5YKk8wQMIjT4q17KMzMqy578ace62epQwWfwzkPjPnrKPk5FXxuxOooVG0wbRLr18ShQoAkuOsjaWVYiTnETAp3P8Hm02dWidDAVvDQ_VLY7oBxUtaS-ktem1mngs7Qju7S6-WSM3hwobmBdatB_OQIBdR1acd9sL10HdoAFORIHcc8Gk0I5E0LY"
@@ -119,16 +124,13 @@
           </div>
           <div class="pt-2">
             <h1
-              class="font-['IBM_Plex_Serif',serif] text-4xl lg:text-5xl lg:leading-[1.18] font-medium text-stone-900 tracking-tight">
+              class="font-['IBM_Plex_Serif',serif] text-3xl sm:text-4xl lg:text-5xl lg:leading-[1.18] font-medium text-stone-900 tracking-tight">
               Juliana Top Investment<br>Obligatie 2026-2032</h1>
           </div>
           <p class="text-base lg:text-lg text-stone-600 max-w-xl leading-relaxed">Een solide investering met een
             aantrekkelijk rendement per jaar, uitgegeven en gestationeerd rechtstreeks door Juliana Top Investment N.V.
             via haar institutionele kanalen.</p>
-          <div class="flex flex-wrap items-center gap-4 pt-2"><a
-              class="tab-link inline-flex items-center gap-2 bg-stone-950 hover:bg-stone-800 text-white font-semibold text-sm px-6 py-3 rounded transition-colors shadow-sm"
-              href="#inschrijven" data-target="inschrijven"><span class="">Inschrijven op Obligatie</span><span
-                class="material-symbols-outlined text-[18px]">arrow_forward</span></a><button id="open-video"
+          <div class="flex flex-wrap items-center gap-4 pt-2"><button id="open-video"
               class="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-900 font-semibold text-sm px-6 py-3 border border-stone-300 rounded transition-colors group shadow-sm">
               <span
                 class="material-symbols-outlined text-secondary text-[20px] group-hover:scale-110 transition-transform">play_circle</span>
@@ -136,24 +138,19 @@
             </button></div>
           <div class="pt-4">
             <div
-              class="inline-flex flex-col sm:flex-row sm:items-center gap-6 p-4 rounded-lg border border-stone-300/80 bg-white/70 shadow-sm max-w-xl"
+              class="flex max-w-xl flex-col gap-4 rounded-lg border border-stone-300/80 bg-white/70 p-4 shadow-sm"
               style="backdrop-filter: blur(8px); background-color: rgba(255, 255, 255, 0.72); border-color: rgb(223, 217, 204);">
-              <div class="flex items-center gap-3 pr-0 sm:pr-6 sm:border-r border-stone-200"><span
-                  class="material-symbols-outlined text-secondary text-2xl"
-                  data-icon="hourglass_top">hourglass_top</span>
-                <div><span
-                    class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider">Looptijd</span><span
-                    class="text-stone-900 font-bold text-sm lg:text-base">6 Jaar (2026–2032)</span></div>
-              </div>
-              <div class="flex-1 min-w-[200px]">
-                <div class="flex flex-col gap-1"><span
-                    class="text-stone-600 text-[11px] font-bold uppercase tracking-wider">Allocatie Voortgang</span>
-                  <div class="flex items-baseline justify-between"><span class="text-[#99772c] font-bold text-xs">82%
-                      Geplaatst</span></div>
-                  <div class="w-full h-2 bg-stone-200/90 rounded-full overflow-hidden flex mt-0.5">
-                    <div class="bg-[#795d21] h-full rounded-full"
-                      style="width: 82%; background-color: rgb(184, 151, 88);"></div>
+              <span class="block text-xs font-bold uppercase tracking-wider text-stone-600">Local Equity 2</span>
+              <div class="flex flex-col gap-4 border-t border-stone-200 pt-4 sm:flex-row sm:items-center sm:gap-6">
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-baseline justify-between gap-2"><span class="text-[10px] font-bold uppercase tracking-wider text-stone-500">Allocatie Voortgang</span><span class="whitespace-nowrap text-xs font-bold text-[#99772c]">82% Geplaatst</span></div>
+                  <div class="mt-2 flex h-2 w-full overflow-hidden rounded-full bg-stone-200/90">
+                    <div class="h-full rounded-full bg-[#795d21]" style="width: 82%; background-color: rgb(184, 151, 88);"></div>
                   </div>
+                </div>
+                <div class="flex items-center gap-3 border-t border-stone-200 pt-4 sm:flex-shrink-0 sm:border-l sm:border-t-0 sm:pt-0 sm:pl-6">
+                  <span class="material-symbols-outlined text-2xl text-secondary" data-icon="hourglass_top" aria-hidden="true">hourglass_top</span>
+                  <div><span class="block text-[10px] font-bold uppercase tracking-wider text-stone-500">Looptijd</span><span class="text-sm font-bold text-stone-900 lg:text-base">6 Jaar</span></div>
                 </div>
               </div>
             </div>
@@ -207,25 +204,25 @@
   <!-- ================= SECTION 3: VOLLEDIG OVERZICHT VAN OBLIGATIEKLASSEN (A t/m F) ================= -->
   <section class="py-space-xl bg-surface tab-content block" id="obligatiestructuur"
     style="background-color: rgb(248, 246, 242);">
-    <div class="max-w-[1360px] mx-auto px-margin-desktop">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-margin-desktop">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-space-xl">
         <span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest block mb-2">Officiële
           Tranche-Indeling</span>
-        <h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">Volledig Overzicht van
+        <h2 class="text-headline-lg-mobile sm:text-headline-lg font-headline-lg text-primary tracking-tight">Volledig Overzicht van
           Obligatieklassen (A t/m F)</h2>
         <p class="text-body-md font-body-md text-on-surface-variant mt-2">De obligatie-uitgifte 2026–2032 is
           onderverdeeld in drie afgestemde investeringsniveaus met vaste rendementen in zowel EURO als USD valuta.</p>
       </div>
       <!-- Category 1: Kleinschalig (Klasse A & B) -->
       <div class="mb-space-xl">
-        <div class="flex items-center justify-between mb-4 border-b border-outline-variant pb-2">
+        <div class="flex flex-col items-start gap-2 mb-4 border-b border-outline-variant pb-2 sm:flex-row sm:items-center sm:justify-between">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-secondary" data-icon="savings">savings</span>
             <h3 class="text-title-lg font-title-lg text-primary">Categorie 1: Klasse A &amp; B (Kleinschalig)</h3>
           </div>
           <span
-            class="text-label-caps font-label-caps bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">Doelgroep:
+            class="max-w-full whitespace-normal text-left text-label-caps font-label-caps bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">Doelgroep:
             Particuliere spaarders en eerste investeerders</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
@@ -277,13 +274,13 @@
       </div>
       <!-- Category 2: Middenschalig (Klasse C & D) -->
       <div class="mb-space-xl">
-        <div class="flex items-center justify-between mb-4 border-b border-outline-variant pb-2">
+        <div class="flex flex-col items-start gap-2 mb-4 border-b border-outline-variant pb-2 sm:flex-row sm:items-center sm:justify-between">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
             <h3 class="text-title-lg font-title-lg text-primary">Categorie 2: Klasse C &amp; D (Middenschalig)</h3>
           </div>
           <span
-            class="text-label-caps font-label-caps bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">Doelgroep:
+            class="max-w-full whitespace-normal text-left text-label-caps font-label-caps bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">Doelgroep:
             MKB, professionals en actieve beleggers</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
@@ -335,13 +332,13 @@
       </div>
       <!-- Category 3: Grootschalig (Klasse E & F) -->
       <div>
-        <div class="flex items-center justify-between mb-4 border-b border-outline-variant pb-2">
+        <div class="flex flex-col items-start gap-2 mb-4 border-b border-outline-variant pb-2 sm:flex-row sm:items-center sm:justify-between">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-secondary" data-icon="corporate_fare">corporate_fare</span>
             <h3 class="text-title-lg font-title-lg text-primary">Categorie 3: Klasse E &amp; F (Grootschalig)</h3>
           </div>
           <span
-            class="text-label-caps font-label-caps bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">Doelgroep:
+            class="max-w-full whitespace-normal text-left text-label-caps font-label-caps bg-surface-container-high px-2 py-1 rounded text-on-surface-variant">Doelgroep:
             Institutionele beleggers, fondsen en vermogensbeheerders</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
@@ -407,7 +404,8 @@
             F</span>
           <span class="text-body-sm font-body-sm text-on-surface-variant">Vaste rente • Geen variabele opslag</span>
         </div>
-        <div class="overflow-x-auto">
+        <p class="mb-2 px-4 text-xs text-stone-500 sm:hidden">Veeg horizontaal om alle kolommen te bekijken.</p>
+        <div class="overflow-x-auto" role="region" aria-label="Vergelijkingstabel obligatieklassen" tabindex="0">
           <table class="w-full text-left border-collapse">
             <thead>
               <tr
@@ -491,13 +489,13 @@
   <!-- ================= SECTION 4: BETALINGSVOORWAARDEN & RENTE-KALENDER ================= -->
   <section class="py-space-xl bg-surface-container-low border-y border-outline-variant tab-content hidden"
     id="rendement" style="background-color: rgb(243, 239, 231); border-color: rgb(226, 221, 210);">
-    <div class="max-w-[1360px] mx-auto px-margin-desktop">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-margin-desktop">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
         <!-- Calendar Info -->
         <div class="lg:col-span-6 space-y-space-md">
           <span class="text-label-caps font-label-caps text-secondary uppercase tracking-wider block">Fiduciarische
             Bepalingen</span>
-          <h2 class="text-headline-lg font-headline-lg text-primary tracking-tight">Algemene Betalingsvoorwaarden &amp;
+          <h2 class="text-headline-lg-mobile sm:text-headline-lg font-headline-lg text-primary tracking-tight">Algemene Betalingsvoorwaarden &amp;
             Rente-Kalender</h2>
           <p class="text-body-md font-body-md text-on-surface-variant">Het aflossings- en rentebeleid van Juliana Top
             Investment N.V. is vastgelegd met strikte institutionele waarborgen voor tijdige en foutloze uitkering.</p>
@@ -595,19 +593,19 @@
   <!-- ================= SECTION 5: INTERACTIEVE RENDEMENTSCALCULATOR ================= -->
   <section class="py-space-xl bg-surface tab-content hidden" id="inschrijven"
     style="background-color: rgb(248, 246, 242);">
-    <div class="max-w-[1360px] mx-auto px-margin-desktop">
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-margin-desktop">
       <div
         class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-xl text-center shadow-sm max-w-4xl mx-auto"
         style="background-color: rgb(252, 251, 249); border: 1px solid rgb(223, 217, 204); box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 30px -10px;">
         <span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest block mb-2">Direct
           Deelnemen</span>
-        <h2 class="text-headline-lg font-headline-lg text-primary tracking-tight mb-3">Inschrijven op de Obligatie</h2>
+        <h2 class="text-headline-lg-mobile sm:text-headline-lg font-headline-lg text-primary tracking-tight mb-3">Inschrijven op de Obligatie</h2>
         <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-lg leading-relaxed">Vul
           uw gegevens in om direct deel te nemen aan deze exclusieve emissie via ons beveiligde registratieformulier.
         </p>
         <div class="flex justify-center items-center">
           <button type="button" disabled aria-describedby="zoho-form-status"
-            class="inline-flex cursor-not-allowed items-center justify-center gap-2 rounded border px-space-xl py-3.5 font-label-numeric text-label-numeric font-semibold uppercase opacity-70"
+            class="dark-surface inline-flex w-full max-w-xl cursor-not-allowed items-center justify-center gap-2 whitespace-normal break-words rounded border px-4 py-3.5 text-center text-xs font-semibold uppercase opacity-70 sm:px-space-xl sm:text-sm"
             style="background-color: rgb(18, 20, 23); border: 1px solid rgb(184, 151, 88); color: rgb(250, 248, 244); letter-spacing: 0.05em;">
             <span>Inschrijvingsformulier binnenkort beschikbaar</span>
           </button>
@@ -715,7 +713,7 @@
       </div>
 
       <!-- PPP Section -->
-      <div class="bg-[#1a1c1e] rounded-2xl p-10 lg:p-14 text-white mb-10">
+      <div class="dark-surface bg-[#1a1c1e] rounded-2xl p-10 lg:p-14 text-white mb-10">
         <div class="max-w-2xl mb-10">
           <div
             class="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded text-[10px] font-bold text-[#d9cfb5] tracking-widest uppercase mb-4">
@@ -757,7 +755,7 @@
         <p class="text-stone-600 mb-6 max-w-xl mx-auto">Private-sector investeerders hebben via onze obligatielening een
           betrouwbare manier om bij te dragen aan de welvaart, duurzaamheid en inclusie van Suriname.</p>
         <a href="#inschrijven"
-          class="inline-flex items-center gap-2 bg-stone-950 hover:bg-stone-800 text-white font-semibold text-sm px-8 py-3.5 rounded transition-colors shadow-sm tab-link"
+          class="dark-surface inline-flex items-center gap-2 bg-stone-950 hover:bg-stone-800 text-white font-semibold text-sm px-8 py-3.5 rounded transition-colors shadow-sm tab-link"
           data-target="inschrijven">
           <span>Bekijk de Obligatielening</span>
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
@@ -767,9 +765,9 @@
     </div>
   </section>
   <!-- ================= INSTITUTIONAL FOOTER / SHARED COMPONENT ================= -->
-  <footer class="bg-primary text-on-primary border-t border-outline-variant mt-auto" id="contact"
+  <footer class="dark-surface bg-primary text-on-primary border-t border-outline-variant mt-auto" id="contact"
     style="background-color: rgb(14, 16, 19); border-top: 1px solid rgb(43, 46, 51);">
-    <div class="w-full px-margin-desktop py-space-xl max-w-[1360px] mx-auto flex flex-col gap-gutter">
+    <div class="w-full px-4 py-space-xl sm:px-6 lg:px-margin-desktop max-w-[1360px] mx-auto flex flex-col gap-gutter">
       <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 py-8 w-full">
         <div
           class="font-['IBM_Plex_Serif',serif] text-2xl lg:text-3xl font-medium tracking-tight text-white leading-tight max-w-xs">
@@ -790,8 +788,8 @@
 
 
   <!-- ================= VIDEO MODAL ================= -->
-  <div id="video-modal"
-    class="fixed inset-0 z-[100] hidden items-center justify-center bg-primary/95 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+  <div id="video-modal" class="dark-surface
+    fixed inset-0 z-[100] hidden items-center justify-center bg-primary/95 backdrop-blur-sm opacity-0 transition-opacity duration-300">
     <div class="relative w-full max-w-5xl mx-auto px-4 sm:px-6">
       <!-- Close button -->
       <button id="close-modal"
@@ -801,7 +799,7 @@
       <!-- Video container -->
       <div class="relative aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0"
-          title="Introductievideo" frameborder="0"
+          title="Introductievideo" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
       </div>
