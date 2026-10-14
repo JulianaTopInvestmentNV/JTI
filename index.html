@@ -47,7 +47,7 @@
       </a>
 
       <!-- Center: Tab Navigation -->
-      <nav class="hidden 2xl:flex items-center gap-1 overflow-x-auto flex-1 justify-center" aria-label="Hoofdnavigatie">
+      <nav class="hidden xl:flex items-center gap-1 overflow-x-auto flex-1 justify-center" aria-label="Hoofdnavigatie">
         <button
           class="tab-btn active border-b-2 border-[#8c7343] text-stone-900 whitespace-nowrap py-2 px-3 text-sm font-bold transition-colors rounded-sm"
           data-target="obligatiestructuur">
@@ -72,26 +72,21 @@
 
       <!-- Right: CTA buttons -->
       <div class="ml-auto flex flex-shrink-0 items-center gap-2">
-        <a class="dark-surface tab-link inline-flex min-h-11 items-center gap-2 rounded bg-[#1a1c1e] px-3 py-3 text-sm font-semibold text-[#f8f6f2] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2d3135] hover:shadow-xl sm:px-5"
+        <a class="dark-surface tab-link inline-flex min-h-11 items-center gap-2 rounded bg-[#1a1c1e] px-4 py-3 text-sm font-semibold text-[#f8f6f2] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2d3135] hover:shadow-xl sm:px-5"
           href="#inschrijven" data-target="inschrijven" aria-label="Inschrijven op obligatie">
-          <span class="hidden min-[375px]:inline">Inschrijven</span>
+          <span>Inschrijven</span>
           <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit_document</span>
-        </a>
-        <a class="dark-surface tab-link inline-flex min-h-11 items-center gap-2 rounded bg-[#1a1c1e] px-3 py-3 text-sm font-semibold text-[#f8f6f2] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2d3135] hover:shadow-xl sm:px-5"
-          href="#inschrijven" data-target="inschrijven" aria-label="Contact opnemen met een adviseur">
-          <span class="hidden sm:inline">Contact Advisor</span>
-          <span class="material-symbols-outlined text-[16px]" aria-hidden="true">headset_mic</span>
         </a>
       </div>
 
       <button id="mobile-menu-toggle" type="button"
-        class="2xl:hidden inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded border border-stone-300 text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8c7343]"
+        class="xl:hidden inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded border border-stone-300 text-stone-900 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8c7343]"
         aria-label="Open navigatiemenu" aria-controls="mobile-nav" aria-expanded="false">
         <span id="mobile-menu-icon" class="material-symbols-outlined" aria-hidden="true">menu</span>
       </button>
 
     </div>
-    <nav id="mobile-nav" class="hidden 2xl:hidden absolute top-full inset-x-0 border-b border-[#e6e1d8] bg-[#f8f6f2] p-3 shadow-lg"
+    <nav id="mobile-nav" class="hidden xl:hidden absolute top-full inset-x-0 border-b border-[#e6e1d8] bg-[#f8f6f2] p-3 shadow-lg"
       aria-label="Mobiele navigatie">
       <button class="tab-btn active w-full rounded px-4 py-3 text-left text-sm font-bold text-stone-900 hover:bg-stone-100"
         data-target="obligatiestructuur">Tranche-Indeling</button>
@@ -106,11 +101,13 @@
   <!-- ================= SOVEREIGN HERO SECTION ================= -->
   <section class="bg-[#fbfbfa] border-b border-stone-200 py-16 lg:py-24 relative overflow-hidden"
     style="background-color: rgb(245, 242, 235); border-bottom: 1px solid rgb(230, 225, 216);">
-    <div class="absolute inset-0 pointer-events-none hidden items-center justify-end overflow-hidden md:flex"><img
-        alt="Juliana Top Investment Watermark"
-        class="w-[550px] lg:w-[720px] max-w-none mix-blend-multiply translate-x-12 lg:translate-x-20 object-contain select-none opacity-40"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-xegDuBZT9mkVQWvKDVOn6i7m23nWIgeWOJ_SP62pR5yJWPBSSRfdPBuMnup5YKk8wQMIjT4q17KMzMqy578ace62epQwWfwzkPjPnrKPk5FXxuxOooVG0wbRLr18ShQoAkuOsjaWVYiTnETAp3P8Hm02dWidDAVvDQ_VLY7oBxUtaS-ktem1mngs7Qju7S6-WSM3hwobmBdatB_OQIBdR1acd9sL10HdoAFORIHcc8Gk0I5E0LY"
-        style="mix-blend-mode: multiply; pointer-events: none;"></div>
+    <div class="absolute inset-0 pointer-events-none overflow-hidden flex items-end justify-end">
+      <img
+        alt="Juliana Top Investment Achtergrond Illustratie"
+        class="w-[520px] sm:w-[700px] lg:w-[880px] xl:w-[980px] max-w-none translate-x-8 sm:translate-x-10 lg:translate-x-4 translate-y-2 sm:translate-y-4 object-contain object-bottom select-none opacity-25 sm:opacity-30 lg:opacity-40 pointer-events-none"
+        src="assets/hero-sketch-bg.png"
+        style="mask-image: radial-gradient(ellipse 90% 85% at 75% 85%, black 45%, rgba(0,0,0,0.7) 70%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 90% 85% at 75% 85%, black 45%, rgba(0,0,0,0.7) 70%, transparent 100%); pointer-events: none;">
+    </div>
     <div class="max-w-[1360px] mx-auto px-6 lg:px-16 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div class="lg:col-span-8 space-y-6">
@@ -130,12 +127,23 @@
           <p class="text-base lg:text-lg text-stone-600 max-w-xl leading-relaxed">Een solide investering met een
             aantrekkelijk rendement per jaar, uitgegeven en gestationeerd rechtstreeks door Juliana Top Investment N.V.
             via haar institutionele kanalen.</p>
-          <div class="flex flex-wrap items-center gap-4 pt-2"><button id="open-video"
-              class="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 text-stone-900 font-semibold text-sm px-6 py-3 border border-stone-300 rounded transition-colors group shadow-sm">
-              <span
-                class="material-symbols-outlined text-secondary text-[20px] group-hover:scale-110 transition-transform">play_circle</span>
-              <span>Bekijk Introductievideo</span>
-            </button></div>
+          <!-- Ingesloten Introductievideo direct zichtbaar -->
+          <div class="pt-2 w-full max-w-xl">
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-stone-300/90 bg-black">
+              <iframe class="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0"
+                title="Introductievideo Juliana Top Investment"
+                frameborder="0"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <p class="mt-2 text-xs text-stone-500 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[15px] text-[#8c7343]" aria-hidden="true">play_circle</span>
+              <span>Bekijk de officiële introductievideo van Juliana Top Investment N.V.</span>
+            </p>
+          </div>
           <div class="pt-4">
             <div
               class="flex max-w-xl flex-col gap-4 rounded-lg border border-stone-300/80 bg-white/70 p-4 shadow-sm"
@@ -775,10 +783,17 @@
         <div class="text-body-sm font-body-sm font-semibold text-white/90">© 2026 Juliana Top Investment N.V. Private
           &amp; Confidential.</div>
         <div
-          class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-x-8 gap-y-2 text-body-sm font-body-sm">
-            <div class="flex items-center gap-6"><a
-              class="text-white font-medium hover:text-secondary-fixed underline underline-offset-4 transition-colors"
-              href="terms-of-use.html">Terms of Use</a></div>
+          class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 text-body-sm font-body-sm">
+          <button id="open-advisor-modal" type="button"
+            class="inline-flex items-center gap-2 rounded bg-[#8c7343] hover:bg-[#a0844f] text-[#f8f6f2] px-4 py-2 text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+            aria-label="Contact opnemen met een adviseur">
+            <span class="material-symbols-outlined text-[16px]" aria-hidden="true">headset_mic</span>
+            <span>Contact Advisor</span>
+          </button>
+          <div class="flex items-center gap-6">
+            <a class="text-white font-medium hover:text-[#d9cfb5] underline underline-offset-4 transition-colors"
+              href="terms-of-use.html">Terms of Use</a>
+          </div>
         </div>
       </div>
     </div>
@@ -787,21 +802,144 @@
 
 
 
-  <!-- ================= VIDEO MODAL ================= -->
-  <div id="video-modal" class="dark-surface
-    fixed inset-0 z-[100] hidden items-center justify-center bg-primary/95 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-    <div class="relative w-full max-w-5xl mx-auto px-4 sm:px-6">
-      <!-- Close button -->
-      <button id="close-modal"
-        class="absolute -top-12 right-4 sm:right-6 text-white hover:text-secondary-fixed transition-colors">
-        <span class="material-symbols-outlined text-4xl">close</span>
-      </button>
-      <!-- Video container -->
-      <div class="relative aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10">
-        <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0"
-          title="Introductievideo" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+
+  <!-- ================= CONTACT ADVISOR MODAL ================= -->
+  <div id="advisor-modal" class="dark-surface fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300 p-4 overflow-y-auto"
+    role="dialog" aria-modal="true" aria-labelledby="advisor-modal-title">
+    <div class="relative w-full max-w-lg my-8 bg-[#181a1d] text-white rounded-xl shadow-2xl border border-stone-700/80 overflow-hidden">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-stone-700/80 px-6 py-5 bg-[#141619]">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded bg-[#8c7343]/20 border border-[#8c7343]/40 flex items-center justify-center text-[#d9cfb5] flex-shrink-0">
+            <span class="material-symbols-outlined text-xl">headset_mic</span>
+          </div>
+          <div>
+            <h3 id="advisor-modal-title" class="font-['IBM_Plex_Serif',serif] text-lg sm:text-xl font-bold tracking-tight text-white">
+              Contact met een Adviseur
+            </h3>
+            <p class="text-xs text-stone-400 mt-0.5">Persoonlijk en vertrouwelijk advies over uw participatie</p>
+          </div>
+        </div>
+        <button id="close-advisor-modal" type="button"
+          class="rounded-lg p-2 text-stone-400 hover:text-white hover:bg-stone-800 transition-colors focus:outline-none focus:ring-2 focus:ring-[#8c7343] cursor-pointer"
+          aria-label="Sluit formulier">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Form) -->
+      <form id="advisor-contact-form" class="p-6 sm:p-7 space-y-4" novalidate>
+        <!-- Full Name -->
+        <div>
+          <label for="advisor-name" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
+            Volledige Naam <span class="text-amber-500">*</span>
+          </label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-lg pointer-events-none">person</span>
+            <input type="text" id="advisor-name" name="name" required placeholder="bijv. Jan de Vries"
+              class="advisor-field w-full rounded-md border border-stone-700 pl-9 pr-3 py-2 text-sm text-white placeholder-stone-500 focus:border-[#8c7343] focus:outline-none focus:ring-1 focus:ring-[#8c7343] transition-colors">
+          </div>
+          <p id="advisor-name-error" class="field-error hidden text-xs text-rose-400 mt-1">Vul alstublieft uw volledige naam in.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Email -->
+          <div>
+            <label for="advisor-email" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
+              E-mailadres <span class="text-amber-500">*</span>
+            </label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-lg pointer-events-none">mail</span>
+              <input type="email" id="advisor-email" name="email" required placeholder="naam@voorbeeld.com"
+                class="advisor-field w-full rounded-md border border-stone-700 pl-9 pr-3 py-2 text-sm text-white placeholder-stone-500 focus:border-[#8c7343] focus:outline-none focus:ring-1 focus:ring-[#8c7343] transition-colors">
+            </div>
+            <p id="advisor-email-error" class="field-error hidden text-xs text-rose-400 mt-1">Vul een geldig e-mailadres in.</p>
+          </div>
+
+          <!-- Phone Number -->
+          <div>
+            <label for="advisor-phone" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
+              Telefoonnummer <span class="text-amber-500">*</span>
+            </label>
+            <div class="relative">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-lg pointer-events-none">call</span>
+              <input type="tel" id="advisor-phone" name="phone" required placeholder="+597 123 456 / +31 6..."
+                class="advisor-field w-full rounded-md border border-stone-700 pl-9 pr-3 py-2 text-sm text-white placeholder-stone-500 focus:border-[#8c7343] focus:outline-none focus:ring-1 focus:ring-[#8c7343] transition-colors">
+            </div>
+            <p id="advisor-phone-error" class="field-error hidden text-xs text-rose-400 mt-1">Vul een geldig telefoonnummer in.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Desired Investment Amount -->
+          <div>
+            <label for="advisor-amount" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
+              Beoogde Investering
+            </label>
+            <select id="advisor-amount" name="amount"
+              class="advisor-field w-full rounded-md border border-stone-700 px-3 py-2 text-sm text-white focus:border-[#8c7343] focus:outline-none focus:ring-1 focus:ring-[#8c7343] transition-colors">
+              <option value="Tranche A (vanaf $10.000 / €10.000)">Tranche A (USD / EUR 10.000+)</option>
+              <option value="Tranche B (vanaf $50.000 / €50.000)">Tranche B (USD / EUR 50.000+)</option>
+              <option value="Tranche C ($100.000+ Institutioneel)">Tranche C (USD / EUR 100.000+)</option>
+              <option value="Oriënterend / Algemeen" selected>Oriënterend / Vrijblijvend</option>
+            </select>
+          </div>
+
+          <!-- Preferred Contact Method -->
+          <div>
+            <label for="advisor-contact-pref" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
+              Voorkeur Contact
+            </label>
+            <select id="advisor-contact-pref" name="contactPreference"
+              class="advisor-field w-full rounded-md border border-stone-700 px-3 py-2 text-sm text-white focus:border-[#8c7343] focus:outline-none focus:ring-1 focus:ring-[#8c7343] transition-colors">
+              <option value="Telefonisch">Telefonisch</option>
+              <option value="WhatsApp">WhatsApp</option>
+              <option value="E-mail">Per E-mail</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="advisor-message" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
+            Vraag of Opmerking <span class="text-stone-500 font-normal lowercase">(optioneel)</span>
+          </label>
+          <textarea id="advisor-message" name="message" rows="2" placeholder="Geef eventuele specifieke wensen of vragen door..."
+            class="advisor-field w-full rounded-md border border-stone-700 px-3 py-2 text-sm text-white placeholder-stone-500 focus:border-[#8c7343] focus:outline-none focus:ring-1 focus:ring-[#8c7343] transition-colors resize-none"></textarea>
+        </div>
+
+        <!-- Privacy note -->
+        <p class="text-[11px] leading-snug text-stone-400">
+          Uw gegevens worden strikt vertrouwelijk behandeld conform ons privacybeleid.
+        </p>
+
+        <!-- Submit button -->
+        <div class="pt-1">
+          <button type="submit" id="advisor-submit-btn"
+            class="w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#8c7343] hover:bg-[#a0844f] px-5 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 cursor-pointer">
+            <span class="material-symbols-outlined text-base">send</span>
+            <span id="advisor-submit-text">Verzend Aanvraag</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success State Card -->
+      <div id="advisor-success-state" class="hidden p-8 sm:p-10 text-center space-y-4">
+        <div class="w-14 h-14 mx-auto rounded-full bg-emerald-900/40 border border-emerald-500/50 flex items-center justify-center advisor-success-icon">
+          <span class="material-symbols-outlined text-3xl">check_circle</span>
+        </div>
+        <h4 class="font-['IBM_Plex_Serif',serif] text-xl font-bold text-white">
+          Aanvraag Succesvol Ontvangen
+        </h4>
+        <p class="text-sm text-stone-300 max-w-sm mx-auto leading-relaxed">
+          Hartelijk dank, <strong id="advisor-success-name" class="text-white"></strong>. Een adviseur van Juliana Top Investment N.V. neemt zo spoedig mogelijk contact met u op.
+        </p>
+        <div class="pt-2">
+          <button type="button" id="advisor-success-close-btn"
+            class="inline-flex items-center justify-center gap-2 rounded-md bg-[#22252a] hover:bg-[#2d3137] border border-stone-600 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors cursor-pointer">
+            <span>Venster Sluiten</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

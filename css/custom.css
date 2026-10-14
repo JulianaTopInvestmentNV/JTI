@@ -28,3 +28,32 @@ body * {
 .dark-surface * {
     color: #fff !important;
 }
+
+/* Advisor Modal Form Styles */
+.advisor-field {
+    background-color: #22252a !important;
+    color: #ffffff !important;
+}
+
+.advisor-field option {
+    background-color: #1a1c1e !important;
+    color: #ffffff !important;
+}
+
+.advisor-field::placeholder {
+    color: #9ca3af !important;
+}
+
+.field-error {
+    color: #f87171 !important;
+}
+
+#advisor-submit-btn,
+#advisor-submit-btn * {
+    color: #ffffff !important;
+}
+
+.advisor-success-icon,
+.advisor-success-icon * {
+    color: #34d399 !important;
+}
