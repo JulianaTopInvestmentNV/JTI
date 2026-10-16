@@ -634,16 +634,21 @@
         <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-lg leading-relaxed">Vul
           uw gegevens in om direct deel te nemen aan deze exclusieve emissie via ons beveiligde registratieformulier.
         </p>
-        <div class="flex justify-center items-center">
-          <button type="button" disabled aria-describedby="zoho-form-status"
-            class="dark-surface inline-flex w-full max-w-xl cursor-not-allowed items-center justify-center gap-2 whitespace-normal break-words rounded border px-4 py-3.5 text-center text-xs font-semibold uppercase opacity-70 sm:px-space-xl sm:text-sm"
-            style="background-color: rgb(18, 20, 23); border: 1px solid rgb(184, 151, 88); color: rgb(250, 248, 244); letter-spacing: 0.05em;">
-            <span>Inschrijvingsformulier binnenkort beschikbaar</span>
-          </button>
+        <!-- Zoho Form Embed -->
+        <div class="w-full mt-2" id="zoho-form-container">
+          <iframe
+            id="zoho-registration-form"
+            aria-label="Inschrijvingsformulier Juliana Top Investment N.V."
+            loading="lazy"
+            allowtransparency="true"
+            frameborder="0"
+            style="height: 820px; width: 100%; border: none; border-radius: 8px;"
+            src="https://forms.zohopublic.com/julianatopofficegm1/form/JulianaTopInvestmentsNV/formperma/A8FX4FtPd6Gao_8v0IwXL3ZqcCJsU0TMcPhWvZlUJic"
+          ></iframe>
         </div>
-        <p id="zoho-form-status"
-          class="mt-5 border-t border-outline-variant pt-4 text-center text-sm text-on-surface-variant">
-          De Zoho-formulierlink is nog niet ingesteld.
+        <p class="mt-5 border-t border-outline-variant pt-4 text-center text-xs text-on-surface-variant">
+          Uw gegevens worden strikt vertrouwelijk behandeld conform ons
+          <a href="terms-of-use.html" class="underline hover:text-primary transition-colors">privacybeleid</a>.
         </p>
       </div>
     </div>
