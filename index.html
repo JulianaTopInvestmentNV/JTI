@@ -5,6 +5,22 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https:;
+    frame-src https://forms.zohopublic.com;
+    connect-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self' https://forms.zohopublic.com;
+  ">
   <link href="assets/favicon.svg" rel="icon" type="image/svg+xml">
   <title>Juliana Top Investment N.V. Obligatielening 2026–2032 | Officiële Investeringsportal</title>
   <!-- Fonts -->
