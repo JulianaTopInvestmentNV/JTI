@@ -189,15 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (advisorSubmitText) advisorSubmitText.textContent = 'Verzenden...';
 
         try {
-          const response = await fetch('https://formsubmit.co/ajax/julianatopoffice@gmail.com', {
+          const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { Accept: 'application/json' },
             body: new FormData(advisorForm)
           });
           const result = await response.json();
 
-          if (!response.ok || (result.success !== true && result.success !== 'true')) {
-            throw new Error('Form submission failed');
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || `Verzenden mislukt (HTTP ${response.status}).`);
           }
 
           const submittedName = nameInput.value.trim();
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (advisorSuccessState) advisorSuccessState.classList.remove('hidden');
         } catch (error) {
           if (advisorSubmitError) {
-            advisorSubmitError.textContent = 'Verzenden is niet gelukt. Controleer uw verbinding en probeer het opnieuw. Bij de eerste inzending moet het e-mailadres mogelijk eerst via FormSubmit worden bevestigd.';
+            advisorSubmitError.textContent = `Verzenden is niet gelukt: ${error.message || 'Controleer uw verbinding en probeer het opnieuw.'}`;
             advisorSubmitError.classList.remove('hidden');
           }
         } finally {
