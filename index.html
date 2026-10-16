@@ -652,14 +652,11 @@
         </p>
         <!-- Inschrijven CTA Button -->
         <div class="flex justify-center items-center mt-2">
-          <a
-            id="zoho-registration-btn"
+          <a id="zoho-registration-btn"
             href="https://forms.zohopublic.com/julianatopofficegm1/form/JulianaTopInvestmentsNV/formperma/A8FX4FtPd6Gao_8v0IwXL3ZqcCJsU0TMcPhWvZlUJic"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" rel="noopener noreferrer"
             class="dark-surface inline-flex items-center justify-center gap-3 rounded border px-8 py-4 text-sm font-semibold uppercase tracking-widest transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
-            style="background-color: rgb(18, 20, 23); border: 1px solid rgb(184, 151, 88); color: rgb(250, 248, 244); letter-spacing: 0.08em;"
-          >
+            style="background-color: rgb(18, 20, 23); border: 1px solid rgb(184, 151, 88); color: rgb(250, 248, 244); letter-spacing: 0.08em;">
             <span class="material-symbols-outlined text-[18px]" style="color: rgb(184, 151, 88);">edit_note</span>
             <span>Inschrijvingsformulier openen</span>
             <span class="material-symbols-outlined text-[16px] opacity-60">open_in_new</span>
@@ -880,7 +877,10 @@
       </div>
 
       <!-- Modal Body (Form) -->
-      <form id="advisor-contact-form" class="p-6 sm:p-7 space-y-4" novalidate>
+      <form id="advisor-contact-form" action="https://formsubmit.co/julianatopoffice@gmail.com" method="POST" class="p-6 sm:p-7 space-y-4" novalidate>
+        <input type="hidden" name="_subject" value="Nieuwe adviesaanvraag via de website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
         <!-- Full Name -->
         <div>
           <label for="advisor-name" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
@@ -954,7 +954,7 @@
 
         <!-- Privacy note -->
         <p class="text-[11px] leading-snug text-stone-400">
-          Uw gegevens worden strikt vertrouwelijk behandeld conform ons privacybeleid.
+          Uw gegevens worden vertrouwelijk behandeld conform ons privacybeleid. Inzendingen worden via FormSubmit naar ons doorgestuurd.
         </p>
 
         <!-- Submit button -->
@@ -964,6 +964,7 @@
             <span class="material-symbols-outlined text-base">send</span>
             <span id="advisor-submit-text">Verzend Aanvraag</span>
           </button>
+          <p id="advisor-submit-error" class="hidden text-xs text-rose-400 mt-3" role="alert"></p>
         </div>
       </form>
 

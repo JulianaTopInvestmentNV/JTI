@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const advisorSuccessName = document.getElementById('advisor-success-name');
   const advisorSubmitBtn = document.getElementById('advisor-submit-btn');
   const advisorSubmitText = document.getElementById('advisor-submit-text');
+  const advisorSubmitError = document.getElementById('advisor-submit-error');
 
   if (advisorModal && openAdvisorBtn) {
     const openAdvisorModal = (e) => {
@@ -141,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (advisorForm) {
-      advisorForm.addEventListener('submit', (e) => {
+      advisorForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const nameInput = document.getElementById('advisor-name');
@@ -157,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset errors
         [nameError, emailError, phoneError].forEach(err => err && err.classList.add('hidden'));
         [nameInput, emailInput, phoneInput].forEach(inp => inp && inp.classList.remove('border-rose-500'));
+        if (advisorSubmitError) advisorSubmitError.classList.add('hidden');
 
         // Validate Name
         if (!nameInput || !nameInput.value.trim()) {
@@ -182,13 +184,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isValid) return;
 
-        // Visual submit state
+        // Send the form to the email handler.
         if (advisorSubmitBtn) advisorSubmitBtn.disabled = true;
         if (advisorSubmitText) advisorSubmitText.textContent = 'Verzenden...';
 
-        setTimeout(() => {
-          if (advisorSubmitBtn) advisorSubmitBtn.disabled = false;
-          if (advisorSubmitText) advisorSubmitText.textContent = 'Verzend Aanvraag';
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/julianatopoffice@gmail.com', {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(advisorForm)
+          });
+          const result = await response.json();
+
+          if (!response.ok || (result.success !== true && result.success !== 'true')) {
+            throw new Error('Form submission failed');
+          }
 
           const submittedName = nameInput.value.trim();
           if (advisorSuccessName) advisorSuccessName.textContent = submittedName;
@@ -196,7 +206,15 @@ document.addEventListener('DOMContentLoaded', () => {
           advisorForm.reset();
           advisorForm.classList.add('hidden');
           if (advisorSuccessState) advisorSuccessState.classList.remove('hidden');
-        }, 500);
+        } catch (error) {
+          if (advisorSubmitError) {
+            advisorSubmitError.textContent = 'Verzenden is niet gelukt. Controleer uw verbinding en probeer het opnieuw. Bij de eerste inzending moet het e-mailadres mogelijk eerst via FormSubmit worden bevestigd.';
+            advisorSubmitError.classList.remove('hidden');
+          }
+        } finally {
+          if (advisorSubmitBtn) advisorSubmitBtn.disabled = false;
+          if (advisorSubmitText) advisorSubmitText.textContent = 'Verzend Aanvraag';
+        }
       });
     }
   }
