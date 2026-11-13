@@ -169,11 +169,11 @@
                 <div class="min-w-0 flex-1">
                   <div class="flex items-baseline justify-between gap-2"><span
                       class="text-[10px] font-bold uppercase tracking-wider text-stone-500">Allocatie
-                      Voortgang</span><span class="whitespace-nowrap text-xs font-bold text-[#99772c]">25%
+                      Voortgang</span><span class="whitespace-nowrap text-xs font-bold text-[#99772c]">31%
                       Geplaatst</span></div>
                   <div class="mt-2 flex h-2 w-full overflow-hidden rounded-full bg-stone-200/90">
                     <div class="h-full rounded-full bg-[#795d21]"
-                      style="width: 25%; background-color: rgb(184, 151, 88);"></div>
+                      style="width: 31%; background-color: rgb(184, 151, 88);"></div>
                   </div>
                 </div>
                 <div
@@ -698,7 +698,7 @@
           <div class="text-[11px] font-bold text-stone-500 uppercase tracking-wider">Oprichtingsjaar</div>
         </div>
         <div class="bg-white border border-[#e6e1d8] rounded-xl p-6 text-center shadow-sm">
-          <div class="font-['IBM_Plex_Serif',serif] text-3xl font-bold text-[#8c7343] mb-1">12%</div>
+          <div class="font-['IBM_Plex_Serif',serif] text-3xl font-bold text-[#8c7343] mb-1">31%</div>
           <div class="text-[11px] font-bold text-stone-500 uppercase tracking-wider">Obligaties Geplaatst</div>
         </div>
         <div class="bg-white border border-[#e6e1d8] rounded-xl p-6 text-center shadow-sm">
@@ -818,6 +818,22 @@
 
     </div>
   </section>
+
+  <!-- ================= TRUST BAR: KKF REGISTRATIE ================= -->
+  <div class="border-t border-[#e6e1d8] bg-[#f8f6f2] py-4">
+    <div class="mx-auto max-w-[1360px] px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3 text-sm text-stone-700">
+        <span class="material-symbols-outlined text-[20px] text-[#8c7343]" aria-hidden="true">verified_user</span>
+        <span><strong class="font-semibold text-stone-900">Juliana Top Investment N.V.</strong> is officieel geregistreerd bij de Kamer van Koophandel en Fabrieken (KKF), Paramaribo, Suriname.</span>
+      </div>
+      <a href="assets/documents/KKF-Uittreksel-Juliana-Top-Investment-NV.pdf" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8c7343] hover:text-[#a0844f] border border-[#8c7343]/40 hover:border-[#a0844f] rounded px-3 py-2 transition-colors whitespace-nowrap">
+        <span class="material-symbols-outlined text-[15px]">description</span>
+        <span>Inzien KKF Uittreksel (PDF)</span>
+        <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+      </a>
+    </div>
+  </div>
   <!-- ================= INSTITUTIONAL FOOTER / SHARED COMPONENT ================= -->
   <footer class="dark-surface bg-primary text-on-primary border-t border-outline-variant mt-auto" id="contact"
     style="background-color: rgb(14, 16, 19); border-top: 1px solid rgb(43, 46, 51);">
@@ -837,6 +853,11 @@
             <span>Contact Advisor</span>
           </button>
           <div class="flex items-center gap-6">
+            <a class="text-white font-medium hover:text-[#d9cfb5] underline underline-offset-4 transition-colors flex items-center gap-1.5"
+              href="assets/documents/KKF-Uittreksel-Juliana-Top-Investment-NV.pdf" target="_blank" rel="noopener noreferrer">
+              <span>KKF Registratie (PDF)</span>
+              <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
             <a class="text-white font-medium hover:text-[#d9cfb5] underline underline-offset-4 transition-colors"
               href="terms-of-use.html">Terms of Use</a>
           </div>
@@ -882,6 +903,8 @@
         class="p-6 sm:p-7 space-y-4" novalidate>
         <input type="hidden" name="access_key" value="8f0cfb32-1c78-4208-8165-a73357014ed6">
         <input type="hidden" name="subject" value="Nieuwe adviesaanvraag via de website">
+        <!-- Honeypot: bots vullen dit in, echte gebruikers niet -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" aria-hidden="true" tabindex="-1">
         <!-- Full Name -->
         <div>
           <label for="advisor-name" class="block text-xs font-semibold uppercase tracking-wider text-stone-300 mb-1">
